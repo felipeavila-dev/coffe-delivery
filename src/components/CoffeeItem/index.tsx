@@ -1,11 +1,15 @@
-import { CartIconArea, CoffeeInfoArea, CoffeeItem, Container, PriceArea, QuantityArea } from "./styles";
+import { useContext, useState } from "react";
+import { Context } from "../../contexts/Context";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { CartIconArea, CoffeeInfoArea, CoffeeItem, Container, PriceArea, QuantityArea, StyledToastContainer } from "./styles";
 
 import CoffeIcon from '../../assets/images/coffe_icon.svg';
 
 import { ShoppingCart } from "phosphor-react";
 
-import { useContext, useState } from "react";
-import { Context } from "../../contexts/Context";
 
 interface Coffee {
   id: number;
@@ -18,6 +22,8 @@ interface Coffee {
 export const CoffeItem = ({ coffee }: any) => {
   const [qtdItem, setQtdItem] = useState(1);
 
+  
+
   const { cart, setCart } = useContext(Context);
 
   const handleAddToCart = (coffeeItem: Coffee) => {
@@ -27,6 +33,10 @@ export const CoffeItem = ({ coffee }: any) => {
     };
 
     setCart([...cart, coffeeObj]);
+
+    toast('Café adicionado ao carrinho', {
+      autoClose: 1500,
+    });
   }
 
   return (
@@ -55,6 +65,8 @@ export const CoffeItem = ({ coffee }: any) => {
                 </CartIconArea>
               </PriceArea>
             </CoffeeItem>
+
+            <StyledToastContainer />
       </Container>
   );
 }

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { ToastContainer } from 'react-toastify';
+
 export const Container = styled.div``;
 
 export const CoffeeItem = styled.div`
@@ -104,5 +106,31 @@ export const CartIconArea = styled.button`
 
   &:hover {
     opacity: .8;
+  }
+`;
+
+export const StyledToastContainer = styled(ToastContainer).attrs({
+  className: 'toast-container',
+  toastClassName: 'toast',
+  bodyClassName: 'body',
+  progressClassName: 'progress',
+})`
+  /* .toast-container */
+   /* .toast is passed to toastClassName */
+  .toast {
+    background-color: ${ props => props.theme.colors.purple_dark };
+    color: white;
+  }
+
+  button[aria-label="close"] {
+    display: none;
+  }
+
+  /* .body is passed to bodyClassName */
+  .body {
+  }
+
+  /* .progress is passed to progressClassName */
+  .progress {
   }
 `;
