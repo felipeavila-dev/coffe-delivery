@@ -55,9 +55,9 @@ export const CoffeItem = ({ coffee }: any) => {
                   { coffee.price }
                 </span>
                 <QuantityArea>
-                  <Plus onClick={ qtdItem > 0 ? () => setQtdItem(qtdItem - 1) : () => {} } />
+                  <Minus onClick={ qtdItem > 0 ? () => setQtdItem(qtdItem - 1) : () => {} } cursor='pointer' />
                   <span>{qtdItem}</span>
-                  <Minus onClick={ () => setQtdItem(qtdItem + 1) } />
+                  <Plus onClick={ () => setQtdItem(qtdItem + 1) } cursor='pointer' />
                 </QuantityArea>
 
                 <CartIconArea onClick={ () => handleAddToCart(coffee) }>
