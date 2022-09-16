@@ -74,7 +74,7 @@ export const Checkout = () => {
           <FormArea>
             <FormLine>
               <InputField placeholder="CEP" type='number' onChange={ (e) => handleChangeCep(e) }/>
-              *
+              <span>*</span>
             </FormLine>
 
             <FormLine>
@@ -89,7 +89,9 @@ export const Checkout = () => {
                 type='number'
                 value={ userAddress.numero }
                 onChange={ (e) => handleChangeInput(e) }
-              />*
+              />
+              <span>*</span>
+
 
               <InputField
                 name='Complemento'
@@ -111,6 +113,9 @@ export const Checkout = () => {
               <InputField placeholder="UF" type='text' value={ userAddress.uf  } readOnly/>
             </FormLine>
           </FormArea>
+
+            <span>(*) Campos obrigatórios</span>
+
         </OrderForm>
 
         <PaymentArea>

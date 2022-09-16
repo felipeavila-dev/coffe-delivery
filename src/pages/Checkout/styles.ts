@@ -22,6 +22,14 @@ export const OrderForm = styled.div`
   p, small {
     color: ${ props => props.theme.colors.subtitle };
   }
+
+  >span {
+    color: ${ props => props.theme.colors.subtitle };
+    font-weight: bold;
+    font-size: .8rem;
+    align-content: center;
+    margin-left: 1rem;
+  }
 `
 
 export const CheckoutHeader = styled.div`
@@ -66,6 +74,12 @@ export const FormLine = styled.div`
       font-size: 1rem;
     }
   }
+
+  span {
+    font-weight: bold;
+    color: ${ props => props.theme.colors.yellow_dark };
+  }
+
 `;
 
 export const PaymentArea = styled(OrderForm)`
