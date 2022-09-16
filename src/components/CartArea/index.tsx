@@ -34,10 +34,9 @@ export const CartArea = () => {
   }, [cart]);
 
   useEffect(() => {
-    const values = Object.values(userAddress);
-    const noFilledInputs = values.some((value) => value === '');
+    const { bairro, cep, logradouro, uf, numero, localidade } = userAddress;
     
-    if (noFilledInputs) {
+    if (bairro === '' || cep === '' || logradouro === '' || uf === '' || numero === '' || localidade === '' ) {
       setDisableButton(true);
     } else {
       setDisableButton(false);

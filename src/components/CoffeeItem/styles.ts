@@ -67,6 +67,7 @@ export const PriceArea = styled.div`
 
 export const QuantityArea = styled.div`
   display: flex;
+  align-items: center;
   background-color: ${ props => props.theme.colors.button };
   padding: .5rem .75rem;
   border-radius: 8px;

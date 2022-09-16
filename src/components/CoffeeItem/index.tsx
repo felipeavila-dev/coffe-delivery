@@ -8,7 +8,7 @@ import { CartIconArea, CoffeeInfoArea, CoffeeItem, Container, PriceArea, Quantit
 
 import CoffeIcon from '../../assets/images/coffe_icon.svg';
 
-import { ShoppingCart } from "phosphor-react";
+import { ShoppingCart, Plus, Minus } from "phosphor-react";
 
 
 interface Coffee {
@@ -55,9 +55,9 @@ export const CoffeItem = ({ coffee }: any) => {
                   { coffee.price }
                 </span>
                 <QuantityArea>
-                  <button onClick={ () => setQtdItem(qtdItem + 1) }>+</button>
+                  <Plus onClick={ qtdItem > 0 ? () => setQtdItem(qtdItem - 1) : () => {} } />
                   <span>{qtdItem}</span>
-                  <button onClick={ qtdItem > 0 ? () => setQtdItem(qtdItem - 1) : () => {} }>-</button>
+                  <Minus onClick={ () => setQtdItem(qtdItem + 1) } />
                 </QuantityArea>
 
                 <CartIconArea onClick={ () => handleAddToCart(coffee) }>

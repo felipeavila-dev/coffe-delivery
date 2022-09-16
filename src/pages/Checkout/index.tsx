@@ -74,6 +74,7 @@ export const Checkout = () => {
           <FormArea>
             <FormLine>
               <InputField placeholder="CEP" type='number' onChange={ (e) => handleChangeCep(e) }/>
+              *
             </FormLine>
 
             <FormLine>
@@ -88,7 +89,8 @@ export const Checkout = () => {
                 type='number'
                 value={ userAddress.numero }
                 onChange={ (e) => handleChangeInput(e) }
-              />
+              />*
+
               <InputField
                 name='Complemento'
                 placeholder="Complemento"
