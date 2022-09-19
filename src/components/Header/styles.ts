@@ -6,7 +6,11 @@ export const Container = styled.header`
   align-items: center;
   padding: 1rem 6rem;
 
-  background-color: ${ props => props.theme.colors.background }
+  background-color: ${ props => props.theme.colors.background };
+
+  @media (max-width: 780px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 export const LogoArea = styled.div``;

@@ -8,6 +8,10 @@ export const Container = styled.main`
   h2 {
     color: ${ props => props.theme.colors.subtitle }
   }
+
+  @media (max-width: 770px) {
+    align-items: center;
+  }
 `;
 
 export const TitleArea = styled.div``;
@@ -20,6 +24,11 @@ export const CoffeesArea = styled.div`
 
   span {
     display: block;
+  }
+
+  @media (max-width: 770px) {
+    grid-template-columns: 1fr 1fr;
+
   }
 `;
 
