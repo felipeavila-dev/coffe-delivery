@@ -15,8 +15,7 @@ A aplicação foi fruto de um desafio proposto pelo Bootcamp da Rocketseat, onde
 - <b> VIA CEP </b> - API para consultas de cep - [Link da API](https://viacep.com.br/)
 - <b> React-Toastify </b> - Gerar alertas customizados - [Link da biblioteca](https://www.npmjs.com/package/react-toastify)
 
-![controle_financas_pessoais](https://user-images.githubusercontent.com/26674677/188196777-2d4808ce-753a-40a5-94f3-cc1d1d1abe0f.gif)
-
+![coffee-delivery](https://user-images.githubusercontent.com/26674677/191333112-49c6c21b-fd5b-4f3a-9f88-b701090a4ad1.gif)
 
 ## Para clonar o projeto:
 
