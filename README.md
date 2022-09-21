@@ -5,6 +5,7 @@ A aplicação foi fruto de um desafio proposto pelo Bootcamp da Rocketseat, onde
 
 
 [Link do projeto na Vercel](https://coffee-delivery-navy.vercel.app/) - Aqui você pode visualizar o pojeto em funcionamento!
+O projeto esta responsivo para dispositivos móveis, ou seja, pode ser acessado através deste link diretamente pelo celular 📱
 
 # Tecnologias utilizadas:
 
