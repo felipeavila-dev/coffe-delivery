@@ -48,7 +48,7 @@ export const CartArea = () => {
     } else {
       setDisableButton(false);
     }
-  }, [userAddress])
+  }, [userAddress, cart])
 
   const handleDecreaseQuantity = (coffee: Coffee) => {
     const currentCart = cart.map((coffeeItem) => {
