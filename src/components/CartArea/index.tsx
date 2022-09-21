@@ -36,7 +36,14 @@ export const CartArea = () => {
   useEffect(() => {
     const { bairro, cep, logradouro, uf, numero, localidade } = userAddress;  
     
-    if (bairro === '' || cep === '' || logradouro === '' || uf === '' || numero === '' || localidade === '' ) {
+    if (
+      bairro === ''
+      || cep === ''
+      || logradouro === ''
+      || uf === ''
+      || numero === ''
+      || localidade === ''
+      || cart.length === 0) {
       setDisableButton(true);
     } else {
       setDisableButton(false);
@@ -82,48 +89,58 @@ export const CartArea = () => {
       <HeaderTitle>Cafés selecionados</HeaderTitle>
       
       <CartItemsArea>
-        { cart.map((coffee) => (
-          <CartItem key={ coffee.id }>
-            <img src={ CoffeImg } alt="" />
-            <CartItemDescription>
-
-              <CoffeItemHeader>
-                <p>{ coffee.title }</p>
-                <p>R$ { coffee.price }</p>
-              </CoffeItemHeader>
-
-              <CoffeItemInfo>
-                <ItemQuantityArea>
-                  <button onClick={ () => handleDecreaseQuantity(coffee) }><Minus /></button>
-                  <span>{ coffee.quantity }</span>
-                  <button onClick={ () => handleIncreaseQuantity(coffee) }><Plus /></button>
-                </ItemQuantityArea>
-               
-                <ItemRemoveButton onClick={ () => handleRemoveItem(coffee) }>
-                  <Trash weight="fill" color='#8047F8'/> 
-                  <span>Remover</span>
-                </ItemRemoveButton>
-              </CoffeItemInfo>
-
-            </CartItemDescription>
-          </CartItem>
-        )) }
+        { cart.length > 0 ? (
+          cart.map((coffee) => (
+            <CartItem key={ coffee.id }>
+              <img src={ CoffeImg } alt="" />
+              <CartItemDescription>
+  
+                <CoffeItemHeader>
+                  <p>{ coffee.title }</p>
+                  <p>R$ { coffee.price }</p>
+                </CoffeItemHeader>
+  
+                <CoffeItemInfo>
+                  <ItemQuantityArea>
+                    <button onClick={ () => handleDecreaseQuantity(coffee) }><Minus /></button>
+                    <span>{ coffee.quantity }</span>
+                    <button onClick={ () => handleIncreaseQuantity(coffee) }><Plus /></button>
+                  </ItemQuantityArea>
+                 
+                  <ItemRemoveButton onClick={ () => handleRemoveItem(coffee) }>
+                    <Trash weight="fill" color='#8047F8'/> 
+                    <span>Remover</span>
+                  </ItemRemoveButton>
+                </CoffeItemInfo>
+  
+              </CartItemDescription>
+            </CartItem>
+          ))
+        ): (
+          <h2>Seu carrinho ainda esta vazio!</h2>
+        )}
 
         <CartPriceArea>
-          <OrderInfo>
-            <span>Total de itens</span>
-            <span>R$ { totalItemsPrice.toFixed(2) }</span>
-          </OrderInfo>
+          { cart.length > 0 ? (
+            <>
+             <OrderInfo>
+                <span>Total de itens</span>
+                <span>R$ { totalItemsPrice.toFixed(2) }</span>
+              </OrderInfo>
 
-          <OrderInfo>
-            <span>Entrega</span>
-            <span>R$ { deliveryPrice.toFixed(2) }</span>
-          </OrderInfo>
+              <OrderInfo>
+                <span>Entrega</span>
+                <span>R$ { deliveryPrice.toFixed(2) }</span>
+              </OrderInfo>
 
-          <OrderInfo>
-            <h3>Total</h3>
-            <h3>R$ { (totalItemsPrice + deliveryPrice).toFixed(2) }</h3>
-          </OrderInfo>
+              <OrderInfo>
+                <h3>Total</h3>
+                <h3>R$ { (totalItemsPrice + deliveryPrice).toFixed(2) }</h3>
+              </OrderInfo>
+            </>
+          ): (
+            ''
+          )}
 
           <FinishOrderButton onClick={ handleSubmitOrder } disabled={disableButton}>
             CONFIRMAR PEDIDO
