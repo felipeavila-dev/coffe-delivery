@@ -4,6 +4,10 @@ export const Container = styled.div``;
 
 export const HeaderTitle = styled.h3`
   margin: 1rem 0;
+
+  @media (max-width: 420px) {
+    margin-left: 1rem;
+  }
 `;
 
 export const CartItemsArea = styled.div`

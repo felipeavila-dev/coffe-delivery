@@ -16,11 +16,24 @@ export const Container = styled.div`
     align-content: center;
     margin-left: 1rem;
   }
+
+  @media (max-width: 420px) {
+    padding: 1rem 0;
+    width: 100vw;
+
+    span {
+      color: red;
+    }
+  }
 `;
 
 export const CheckoutHeader = styled.div`
   display: flex;  
   align-items: baseline;
+
+  @media (max-width: 420px) {
+    padding: 0 .5rem;
+  }
 `;
 
 export const OrderIcon = styled.div`
@@ -40,6 +53,26 @@ export const OrderTitle = styled.div`
 `;
 
 export const FormArea = styled.div`
+
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 420px) {
+    padding: 0 1rem;
+
+    .d-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    span {
+      display: none;
+    }
+
+    .required {
+      border-left: 2px solid red;
+    }
+  }
 `;
 
 export const FormLine = styled.div`
@@ -64,6 +97,14 @@ export const FormLine = styled.div`
   span {
     font-weight: bold;
     color: ${ props => props.theme.colors.yellow_dark };
+  }
+
+  @media (max-width: 420px) {
+    margin: 0;
+    
+    input {
+      margin: 1rem 0;
+    }
   }
 
 `;

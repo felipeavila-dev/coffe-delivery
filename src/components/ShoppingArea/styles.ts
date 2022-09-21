@@ -28,7 +28,10 @@ export const CoffeesArea = styled.div`
 
   @media (max-width: 770px) {
     grid-template-columns: 1fr 1fr;
+  }
 
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr;
   }
 `;
 

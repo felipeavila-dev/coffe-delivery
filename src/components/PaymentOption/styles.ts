@@ -13,7 +13,7 @@ export const Container = styled.button<ContainerProps>`
   border-radius: 8px;
   font-size: 1rem;
   color: ${ props => props.theme.colors.text };
-  border: ${ props => props.selectedMethod ? `1px solid ${ props.theme.colors.text }` : ''};
+  border: ${ props => props.selectedMethod ? `1px solid ${ props.theme.colors.purple }` : ''};
 
   &:hover {
     cursor: pointer;
@@ -24,7 +24,7 @@ export const Container = styled.button<ContainerProps>`
     margin-left: .5rem;
   }
 
-  .selectedPayment {
-    border: 1px solid red;
+  @media (max-width: 420px) {
+    margin-bottom: 1rem;
   }
 `;

@@ -58,7 +58,12 @@ export const OrderFormArea = () => {
 
       <FormArea>
         <FormLine>
-          <InputField placeholder="CEP" type='number' onChange={ (e) => handleChangeCep(e) }/>
+          <InputField
+            placeholder="CEP"
+            type='number'
+            onChange={ (e) => handleChangeCep(e) } 
+            className="required"
+          />
           <span>*</span>
         </FormLine>
 
@@ -66,7 +71,7 @@ export const OrderFormArea = () => {
           <InputField placeholder="Rua" type='text' value={ userAddress.logradouro } readOnly/>
         </FormLine>
 
-        <FormLine>
+        <FormLine className="d-column">
           <InputField
             name='Numero'
             width='2fr'
@@ -74,6 +79,7 @@ export const OrderFormArea = () => {
             type='number'
             value={ userAddress.numero }
             onChange={ (e) => handleChangeInput(e) }
+            className="required"
           />
           <span>*</span>
 
@@ -87,12 +93,13 @@ export const OrderFormArea = () => {
           />
         </FormLine>
 
-        <FormLine className='spaced-inputs'>
+        <FormLine className='spaced-inputs d-column'>
           <InputField width='1fr'
             placeholder="Bairro"
             type='text'
             value={ userAddress.bairro }
             readOnly
+
           />
           <InputField width='1fr' placeholder="Cidade" type='text' value={ userAddress.localidade } readOnly />
           <InputField placeholder="UF" type='text' value={ userAddress.uf  } readOnly/>

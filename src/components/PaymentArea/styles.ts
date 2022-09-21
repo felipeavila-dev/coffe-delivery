@@ -18,6 +18,10 @@ export const Container = styled.div`
     margin-left: 1rem;
   }
 
+  @media (max-width: 420px) {
+    width: 100vw;
+    padding: 1rem .5rem;
+  }
 `;
 
 export const CheckoutHeader = styled.div`
@@ -44,6 +48,10 @@ export const OrderTitle = styled.div`
 export const PaymentOptions = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
   margin: 1.5rem 0;
+
+  @media (max-width: 420px) {
+    flex-direction: column;
+  }
 `;

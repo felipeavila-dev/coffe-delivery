@@ -11,6 +11,10 @@ export const Container = styled.header`
   @media (max-width: 780px) {
     padding: 1rem 2rem;
   }
+
+  @media (max-width: 420px) {
+    padding: 1rem 3rem;
+  }
 `;
 
 export const LogoArea = styled.div``;
@@ -31,6 +35,10 @@ export const LocationArea = styled.div`
 
   span {
     color: ${ props => props.theme.colors.purple };
+  }
+
+  @media (max-width: 420px) {
+    display: none;
   }
 `;
 
